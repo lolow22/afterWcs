@@ -13,6 +13,8 @@
         <input name = "passwordValue" id = "inputPassword" type="password" placeholder="Password">
         <br>
         <input type = "submit" value = "Send">
+        <br>
+        <input type = "submit" value = "Inscription" >
     </form>
 
 </body>

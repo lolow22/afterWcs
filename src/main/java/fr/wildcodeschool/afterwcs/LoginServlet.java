@@ -5,6 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.awt.*;
 import java.io.IOException;
 
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
@@ -17,15 +18,16 @@ public class LoginServlet extends HttpServlet {
          initUser(request,response);
     }
     private void initUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("emailValue");
+        String email = request.getParameter("emailValue");
         String password = request.getParameter("passwordValue");
 
-        UserModel userModel = null;
-        if (username != null && password != null && !username.isEmpty() && !password.isEmpty()){
-            userModel = new UserModel(username, password);
+        LoginModel loginModel = null;
+        if (email != null && password != null && !email.isEmpty() && !password.isEmpty()){
+            loginModel = new LoginModel(password, email);
 
         }
-        request.setAttribute("user", userModel);
+        request.setAttribute("user", loginModel);
         this.getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request,response);
+
     }
 }
