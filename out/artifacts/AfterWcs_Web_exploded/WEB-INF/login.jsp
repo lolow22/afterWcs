@@ -15,5 +15,8 @@
         <input type = "submit" value = "Send">
     </form>
 
+    <br>
+    <button type = "submit" value = "Inscription" href="/WEB-INF/inscription.jsp"/>
+
 </body>
 </html>
